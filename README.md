@@ -158,7 +158,7 @@ In this case, your "deployment" comes in the form of the deliverables listed abo
 2. Buczynski, B. 2019. "5 Proven Ways to Increase Home Value". NerdWallet. Available at: https://www.nerdwallet.com/blog/mortgages/how-to-increase-home-value/
 3. Taylor, A.B. 2019. "11 Features That Will Sell Your Home Faster". Kiplinger. Available at: https://www.kiplinger.com/slideshow/real-estate/T010-S001-home-features-today-s-buyers-want-most/index.html
 4. Crow, S. 2019. "50 Clever Ways to Instantly Add Value to Your Home". BestLife. Available at: https://bestlifeonline.com/home-value-upgrades/
-5. 2018. "5 Features That Make A Property Valuable". House Flipping School. Available at: https://houseflippingschool.com/5-features-valuable/
+5. Unknown author. 2018. "5 Features That Make A Property Valuable". House Flipping School. Available at: https://houseflippingschool.com/5-features-valuable/
 6. Ludwick, R. 2019. Personal correspondence.
 7. Yeh, K. "Duplex vs. Single-Family Home: What's the difference and which one should I invest in?". Homebuyer's School by Brookfield Residential. Available at: https://stories.brookfieldresidential.com/homebuyersschool/duplex-vs.-single-family-home-whats-the-difference-and-which-one-should-i-invest-in
 8. "This is What Could Happen to Your Resale Value if You Add an Accessory Dwelling Unit (ADU) to Your Silicon Valley Property". Acton ADU. Available at: https://actonadu.com/blog/this-is-what-could-happen-to-your-resale-value-if-you-add-an-accessory-dwelling-unit-adu-to-your-silicon-valley-property
