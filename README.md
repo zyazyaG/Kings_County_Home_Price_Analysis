@@ -1,160 +1,160 @@
 
 # Module 2 Final Project
 
-
-## Introduction
-
-In this lesson, we'll review all of the guidelines and specifications for the final project for Module 2.
-
-## Objectives
-You will be able to:
-* Describe all required aspects of the final project for Module 2
-* Describe all required deliverables
-* Describe what constitutes a successful project
-
-## Final Project Summary
-
 Another module down--you're half way there!
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-2-project-v2-1/master/halfway-there.gif)
+![awesome gif](https://raw.githubusercontent.com/learn-co-students/dsc-mod-2-project-seattle-ds-102819/master/halfway-there.gif)
 
-All that remains in Module 2 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
+## BACKGROUND
 
-## The Dataset
+The factors that influence housing prices interest many people, from homeowners hoping to improve the market potential of their current homes, to policymakers making decisions about investment in public projects.  Often we rely on the "expert judgement" of real estate professionals to determine which factors are the most important, but these recommendations may be out-of-date, irrelevant to our particular housing market, or otherwise inaccurate.
 
-For this project, you'll be working with the King County House Sales dataset. We've modified the dataset to make it a bit more fun and challenging.  The dataset can be found in the file `"kc_house_data.csv"`, in this repo.
+## PROJECT GOAL
 
-The description of the column names can be found in the column_names.md file in this repository. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
+Stakeholders in King County, WA have requested statistical analysis to validate several claims about housing prices in the most recent full calendar year, 2018.
 
-You'll clean, explore, and model this dataset with a multivariate linear regression to predict the sale price of houses as accurately as possible.
+These claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
 
-## The Deliverables
+1. Higher square footage increases home sale price<sup>1, 2</sup>
+2. Having a porch increases home sale price<sup>3, 4</sup>
+3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
+4. The house filling a higher proportion of the overall lot decreases home sale price<sup>6</sup>
+5. The cost per square foot is lower in duplexes than in single-family homes<sup>7</sup>
+6. The presence of a nuisance (power lines, traffic noise, airport noise) decreases home sale price<sup>1, 5</sup>
 
-For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
+These claims would require you to seek out additional datasets:
 
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
-4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**	
-5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
+7. Access to "frequent transit" increases home sale price<sup>6</sup>
+8. Lower speed limits increase home sale price<sup>6</sup>
+9. Having an accessory dwelling unit (ADU) increases home sale price<sup>6, 8</sup>
 
-Note: On-campus students may have different requirements, please speak with your instructor.
+Your task is to build a linear regression model to represent sales prices in King County, and use it to address some of these claims.
 
-### Jupyter Notebook Must-Haves
+## THE DATASET
 
-For this project, your Jupyter Notebook should meet the following specifications:
+For this project, you'll be working with the King County House Sales dataset. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
 
-#### Organization/Code Cleanliness
+The data itself (CSV files) and descriptions of the data (DOC files) can be downloaded [here](https://info.kingcounty.gov/assessor/DataDownload/default.aspx).  Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
 
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
+The particular tables required for this analysis are:
 
-#### Visualizations & EDA
+ - Real Property Sales
+ - Residential Building
+ - Parcel
 
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+## PROJECT REQUIREMENTS
 
-#### Model Quality/Approach
+At minimum, your team of data scientists should:
 
-* Your model should not include any predictors with p-values greater than .05.  
-* Your notebook shows an iterative approach to modeling, and details the parameters and results of the model at each iteration.  
-    * **Level Up**: Whenever necessary, you briefly explain the changes made from one iteration to the next, and why you made these choices.  
-* You provide at least 1 paragraph explaining your final model.   
-* You pick at least 3 coefficients from your final model and explain their impact on the price of a house in this dataset.   
+ - Build a linear regression model with a target variable of home sale price, that is statistically valid such that any interpretation of coefficients are valid
+    - Features must not violate the assumptions of a linear regression (multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.)
+    - Try to maximize R<sup>2</sup> _without breaking any assumptions_
+ - Address at least 3 of the 9 claims about housing prices made by subject-matter experts
+    - Report the effect size as well as the statistical significance
+    - It is perfectly acceptable to report a non-finding here
+ - Communicate your findings
 
+In any extra time:
 
-### Non-Technical Presentation Must-Haves
+ - Engineer additional features to improve R<sup>2</sup> (without violating assumptions), either with the existing datasets or by acquiring additional datasets
+ - Address additional claims from the subject-matter experts (without violating assumptions)
+ - Utilize additional statistical techniques other than linear regression to address research questions related to the claims investigated
 
-Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to maximize their profit when selling their home.
+## DELIVERABLES
 
-Your presentation should:
-
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
-
-**_Based on the results of your models, your presentation should discuss at least two concrete features that highly influence housing prices._**
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
-
-
-## The Process 
-The process for this project is identical to the process you followed for your module 1 project. We specified it again below as a refresher.
-(Note: On-campus students may have different processes, please speak with your instructor)
-
-### 1. Getting Started
-
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
-
-Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
-
-Once you're done with this module, please start on the project. Do that by forking this repository, cloning it locally, and working in the student.ipynb file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
-
-### 2. The Project Review
-
-_Note: On-campus students may have different review processes, please speak with your instructor._
-
-> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
-
-#### What to expect from the Project Review
-
-Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
-
-The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
-
-#### 1. Deliver your PDF presentation to a non-technical stakeholder.
-In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
-
-In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
-
-#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
-    * "How did you pick the question(s) that you did?"
-    * "Why are these questions important from a business perspective?"
-    * "How did you decide on the data cleaning options you performed?"
-    * "Why did you choose a given method or library?"
-    * "Why did you select those visualizations and what did you learn from each of them?"
-    * "Why did you pick those features as predictors?"
-    * "How would you interpret the results?"
-    * "How confident are you in the predictive quality of the results?"
-    * "What are some of the things that could cause the results to be wrong?"
-
-Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
-
-If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
-* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
-* Submit an improved version
-* Meet again for another Project Review
-
-What won't happen:
-* You won't be yelled at, belittled, or scolded
-* You won't be put on the spot without support
-* There's nothing you can do to instantly fail or blow it
-
-**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
+1. A public GitHub repository.
+2. An `environment.yml` file that contains all the necessary packages needed to recreate your conda environment.
+3. A standalone `src/` directory that stores all relevant source code.
+    - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
+    - [Well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
+    - Quality linear regression model
+       - Your model should not violate any of the assumptions of a linear regression
+       - Whenever necessary, briefly explain in comments the changes made from one iteration to the next, and why you made these choices
+4. A standalone `data/` directory that stores all relevant raw and processed data files
+    - Be sure to include how the data was obtained!
+    - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history.
+5. A user-focused `README.md` file that explains your process, methodology and findings.
+    - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
+6. One Jupyter Notebook file that focuses on EDA, visualization, and presentation. 
+    - The very beginning of the notebook contains a description of the purpose of the notebook.
+       - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them by enabling them to jump into your project by providing them the purpose of this Jupyter Notebook.
+    - Explanation of the data sources and where one can retrieve them
+       - Whenever possible, link to the corresponding data dictionary
+    - Custom functions and classes are imported from Python modules and are not created directly in the notebook.
+    - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
+7. A one-page memo written exclusively for a non-technical stakeholder.
+    - This memo should describe:
+       - A summary of the business problem you are trying to solve
+       - Key takeaways from your solution
+       - A section on next steps if you had more time (i.e. one additional week)
+8. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+    - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `presentation.pdf`.
+    - Contain between 5-10 professional quality slides detailing:
+       - A high-level overview of your methodology
+       - The results you’ve uncovered
+       - Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company/stakeholder?)
+       - Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
+    - The slides should use visualizations whenever possible, and avoid walls of text
 
 
-## Submitting your Project
+## THE PROCESS
 
- You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
+These steps are informed by Smart Vision's<sup>9</sup> description of the CRISP-DM process.
 
- 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
-_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
-2. **Blog Post:** Include a link to your blog post.
-3. **Record Walkthrough:** Include a link to your video walkthrough.
+### 1. Business Understanding
 
- Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
- 
- 
-## Grading Rubric
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-v2-mod2-final-project/blob/master/module2_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
+Start by reading this document, and making sure that you understand the kinds of questions being asked.  In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section.  Do you want to emphasize affordability, investment, or something else?  This framing will help you choose which stakeholder claims to address.
 
+Three things to be sure you establish during this phase are:
 
-## Summary
+1. **Objectives:** what questions are you trying to answer, and for whom?
+2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining.  Regardless you should determine the division of labor, communication expectations, and timeline.
+3. **Success criteria:** what does a successful project look like?  How will you know when you have achieved it?
 
-The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
+### 2. Data Understanding
+
+Write a script to download the data (or instructions for future users on how to manually download it), and explore it.  Do you understand what the columns mean?  How do the three data tables relate to each other?  How will you select the subset of relevant data?  What kind of data cleaning is required?
+
+It may be useful to generate visualizations of the data during this phase.
+
+### 3. Data Preparation
+
+Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables.  Be sure to document any data that you choose to drop or otherwise exclude.  This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a linear regression model.
+
+### 4. Modeling
+
+Your goal here is not to build just one model, it is to build many models and choose the best one.  In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2018 in King County, not to build a generalizable model that can make predictions about unseen data.
+
+Because of this framing, a higher R<sup>2</sup> is ideal, but you can only aim for a higher R<sup>2</sup> so long as you can demonstrate that you are not violating the assumptions of a linear regression.  These assumptions should be your focus both when selecting features and when assessing the quality of your model.  Even with a relatively low R<sup>2</sup>, you can be confident that the coefficients and p-values you find are valid if you make sure you are not violating the assumptions.
+
+This framing has some implications for your process.  For example, you do not want to perform a train-test split or have some other form of hold-out data, you want all of your data to go into getting the best possible coefficients.  There is also no single number you can reference to demonstrate that you have the best possible model; in this way causal inference is more of an art, whereas machine learning is more of a science.  You can use as many features as you want, but every step of the way you need to check the assumptions, not just check whether R<sup>2</sup> has improved.
+
+### 5. Evaluation
+
+Based on all of your modeling work, choose your best model, and report what it says about your research questions.  An example finding you might report is: "For every increase of 1 `<x variable>`, the housing price increases by `<amount>`, all else being equal".  Consider what types of visualizations would help to communicate the scale and direction of these findings.
+
+### 6. Deployment
+
+In this case, your "deployment" comes in the form of the deliverables listed above. Make sure you can answer the following questions about your process:
+
+ - "How did you pick the question(s) that you did?"
+ - "Why are these questions important from a business perspective?"
+ - "How did you decide on the data cleaning options you performed?"
+ - "Why did you choose a given method or library?"
+ - "Why did you select those visualizations and what did you learn from each of them?"
+ - "Why did you pick those features as predictors?"
+ - "How would you interpret the results?"
+ - "How confident are you in the predictive quality of the results?"
+ - "What are some of the things that could cause the results to be wrong?"
+
+## Citations
+
+1. Gomez, J. 2019. "8 critical factors that influence a home’s value". OpenDoor. Available at: https://www.opendoor.com/w/blog/factors-that-influence-home-value
+2. Buczynski, B. 2019. "5 Proven Ways to Increase Home Value". NerdWallet. Available at: https://www.nerdwallet.com/blog/mortgages/how-to-increase-home-value/
+3. Taylor, A.B. 2019. "11 Features That Will Sell Your Home Faster". Kiplinger. Available at: https://www.kiplinger.com/slideshow/real-estate/T010-S001-home-features-today-s-buyers-want-most/index.html
+4. Crow, S. 2019. "50 Clever Ways to Instantly Add Value to Your Home". BestLife. Available at: https://bestlifeonline.com/home-value-upgrades/
+5. 2018. "5 Features That Make A Property Valuable". House Flipping School. Available at: https://houseflippingschool.com/5-features-valuable/
+6. Ludwick, R. 2019. Personal correspondence.
+7. Yeh, K. "Duplex vs. Single-Family Home: What's the difference and which one should I invest in?". Homebuyer's School by Brookfield Residential. Available at: https://stories.brookfieldresidential.com/homebuyersschool/duplex-vs.-single-family-home-whats-the-difference-and-which-one-should-i-invest-in
+8. "This is What Could Happen to Your Resale Value if You Add an Accessory Dwelling Unit (ADU) to Your Silicon Valley Property". Acton ADU. Available at: https://actonadu.com/blog/this-is-what-could-happen-to-your-resale-value-if-you-add-an-accessory-dwelling-unit-adu-to-your-silicon-valley-property
+9. "What is the CRISP-DM Methodology?" Smart Vision Europe. Available at: https://www.sv-europe.com/crisp-dm-methodology/
