@@ -64,7 +64,7 @@ In any extra time:
 
 1. A public GitHub repository.
 2. An `environment.yml` file that contains all the necessary packages needed to recreate your `linreg-env` conda environment.
-    - Unlike Mod 1, we haven't not given you an `environment.yml` file. Be sure to refer to the documentation to learn how to create and export the `linreg-env` conda environment.
+    - Unlike Mod 1, we haven't not given you an `environment.yml` file. Be sure to refer [to the documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to create and export the `linreg-env` conda environment.
 3. A standalone `src/` directory that stores all relevant source code.
     - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
     - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
