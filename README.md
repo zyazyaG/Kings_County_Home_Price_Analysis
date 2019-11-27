@@ -63,31 +63,36 @@ In any extra time:
 ## DELIVERABLES
 
 1. A public GitHub repository.
-2. An `environment.yml` file that contains all the necessary packages needed to recreate your conda environment.
+2. An `environment.yml` file that contains all the necessary packages needed to recreate your `linreg-env` conda environment.
+    - Unlike Mod 1, we haven't not given you an `environment.yml` file. Be sure to refer to the documentation to learn how to create and export the `linreg-env` conda environment.
 3. A standalone `src/` directory that stores all relevant source code.
     - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
-    - [Well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
+    - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
     - Quality linear regression model
        - Your model should not violate any of the assumptions of a linear regression
        - Whenever necessary, briefly explain in comments the changes made from one iteration to the next, and why you made these choices
 4. A standalone `data/` directory that stores all relevant raw and processed data files
     - Be sure to include how the data was obtained!
     - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history.
-5. A user-focused `README.md` file that explains your process, methodology and findings.
+5. A standalone `references/` directory that stores all relevant literature, data dictionaries, or useful references that were used to help you during the project.
+    - Use this directory to store physical copies of the `.pdf` files; or
+    - Create a `README.md` file that cites external resources that were used.
+6. A standalone `reports/` directory that stores your `memo.md` and `presentation.pdf` files
+7. A user-focused `README.md` file that explains your process, methodology and findings.
     - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
-6. One Jupyter Notebook file that focuses on EDA, visualization, and presentation. 
+8. One Jupyter Notebook file that focuses on EDA, visualization, and presentation. 
     - The very beginning of the notebook contains a description of the purpose of the notebook.
        - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them by enabling them to jump into your project by providing them the purpose of this Jupyter Notebook.
     - Explanation of the data sources and where one can retrieve them
        - Whenever possible, link to the corresponding data dictionary
     - Custom functions and classes are imported from Python modules and are not created directly in the notebook.
     - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
-7. A one-page memo written exclusively for a non-technical stakeholder.
+9. A one-page memo written exclusively for a non-technical stakeholder with a file name `memo.md`.
     - This memo should describe:
        - A summary of the business problem you are trying to solve
        - Key takeaways from your solution
        - A section on next steps if you had more time (i.e. one additional week)
-8. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
     - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `presentation.pdf`.
     - Contain between 5-10 professional quality slides detailing:
        - A high-level overview of your methodology
