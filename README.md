@@ -42,6 +42,8 @@ The particular tables required for this analysis are:
  - Residential Building
  - Parcel
 
+There is also a table called "Lookup" that explains the meaning of many of the attributes in the above tables (e.g. the `Street Surface` attribute of a parcel is a number with lookup code 60, which indicates that `1` means `PAVED`, `2` means `GRAVEL`, `3` means `DIRT`, and `4` means `UNDEVELOPED`)
+
 ## PROJECT REQUIREMENTS
 
 At minimum, your team of data scientists should:
