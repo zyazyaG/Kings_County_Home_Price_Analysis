@@ -7,7 +7,7 @@ Another module down--you're half way there!
 
 ## BACKGROUND
 
-The factors that influence housing prices interest many people, from homeowners hoping to improve the market potential of their current homes, to policymakers making decisions about investment in public projects.  Often we rely on the "expert judgement" of real estate professionals to determine which factors are the most important, but these recommendations may be out-of-date, irrelevant to our particular housing market, or otherwise inaccurate.
+The factors that influence housing prices interest many people, from homeowners hoping to improve the market potential of their current homes, to policymakers making decisions about investment in public projects. Often we rely on the "expert judgement" of real estate professionals to determine which factors are the most important, but these recommendations may be out-of-date, irrelevant to our particular housing market, or otherwise inaccurate.
 
 ## PROJECT GOAL
 
@@ -34,7 +34,7 @@ Your task is to build a linear regression model to represent sales prices in Kin
 
 For this project, you'll be working with the King County House Sales dataset. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
 
-The data itself (CSV files) and descriptions of the data (DOC files) can be downloaded [here](https://info.kingcounty.gov/assessor/DataDownload/default.aspx).  Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
+The data itself (CSV files) and descriptions of the data (DOC files) can be downloaded [here](https://info.kingcounty.gov/assessor/DataDownload/default.aspx). Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
 
 The particular tables required for this analysis are:
 
@@ -48,7 +48,7 @@ There is also a table called "Lookup" that explains the meaning of many of the a
 
 At minimum, your team of data scientists should:
 
- - Build a linear regression model with a target variable of home sale price, that is statistically valid such that any interpretation of coefficients are valid
+ - Build a linear regression model with a target variable of home sale price, which is statistically valid such that any interpretation of coefficients are valid
     - Do your best to have features meet the assumptions of a linear regression (no multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.). Note: This is difficult! We will be looking most of all for _improvement_ on this score. In order to demonstrate improvement, you should create a (not very good) model that will serve as a kind of _baseline_. Then you can compare future regression models that you build with that baseline.
     - Try to maximize R<sup>2</sup> _without breaking any assumptions_
  - Address at least 3 of the 9 claims about housing prices made by subject-matter experts
@@ -111,35 +111,35 @@ These steps are informed by Smart Vision's<sup>9</sup> description of the CRISP-
 
 ### 1. Business Understanding
 
-Start by reading this document, and making sure that you understand the kinds of questions being asked.  In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section.  Do you want to emphasize affordability, investment, or something else?  This framing will help you choose which stakeholder claims to address.
+Start by reading this document, and making sure that you understand the kinds of questions being asked. In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section. Do you want to emphasize affordability, investment, or something else? This framing will help you choose which stakeholder claims to address.
 
 Three things to be sure you establish during this phase are:
 
 1. **Objectives:** what questions are you trying to answer, and for whom?
-2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining.  Regardless you should determine the division of labor, communication expectations, and timeline.
-3. **Success criteria:** what does a successful project look like?  How will you know when you have achieved it?
+2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining. Regardless, you should determine the division of labor, communication expectations, and timeline.
+3. **Success criteria:** what does a successful project look like? How will you know when you have achieved it?
 
 ### 2. Data Understanding
 
-Write a script to download the data (or instructions for future users on how to manually download it), and explore it.  Do you understand what the columns mean?  How do the three data tables relate to each other?  How will you select the subset of relevant data?  What kind of data cleaning is required?
+Write a script to download the data (or instructions for future users on how to manually download it), and explore it. Do you understand what the columns mean? How do the three data tables relate to each other? How will you select the subset of relevant data? What kind of data cleaning is required?
 
 It may be useful to generate visualizations of the data during this phase.
 
 ### 3. Data Preparation
 
-Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables.  Be sure to document any data that you choose to drop or otherwise exclude.  This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a linear regression model.
+Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables. Be sure to document any data that you choose to drop or otherwise exclude. This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a linear regression model.
 
 ### 4. Modeling
 
-Your goal here is not to build just one model, it is to build many models and choose the best one.  In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2018 in King County, not to build a generalizable model that can make predictions about unseen data.
+Your goal here is not to build just one model; it is to build many models and then choose the best one. In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2018 in King County, as opposed to building a generalizable model that can make predictions about unseen data.
 
-Because of this framing, a higher R<sup>2</sup> is ideal, but you can only aim for a higher R<sup>2</sup> so long as you can demonstrate that you are not violating the assumptions of a linear regression.  These assumptions should be your focus both when selecting features and when assessing the quality of your model.  Even with a relatively low R<sup>2</sup>, you can be confident that the coefficients and p-values you find are valid if you make sure you are not violating the assumptions.
+Because of this framing, a higher R<sup>2</sup> is ideal, but you should not focus on attaining a higher R<sup>2</sup> so long as you have gross violations of the assumptions of a linear regression. These assumptions should be your focus both when selecting features and when assessing the quality of your model. Even with a relatively low R<sup>2</sup>, coefficients and p-values will be valid and meaningful if there are no violations of the assumptions.
 
-This framing has some implications for your process.  For example, you do not want to perform a train-test split or have some other form of hold-out data, you want all of your data to go into getting the best possible coefficients.  There is also no single number you can reference to demonstrate that you have the best possible model; in this way causal inference is more of an art, whereas machine learning is more of a science.  You can use as many features as you want, but every step of the way you need to check the assumptions, not just check whether R<sup>2</sup> has improved.
+This framing has some implications for your process. For example, you do not want to perform a train-test split or have some other form of hold-out data; you want all of your data to go into getting the best possible coefficients. There is also no single number you can reference to demonstrate that you have the best possible model; in this way causal inference is more of an art, whereas machine learning is more of a science. You can use as many features as you want, but every step of the way you need to check the assumptions, not just check whether R<sup>2</sup> has improved. Because R<sup>2</sup> can only go up when you add more features, you may want to consult the adjusted R<sup>2</sup> metric as well.
 
 ### 5. Evaluation
 
-Based on all of your modeling work, choose your best model, and report what it says about your research questions.  An example finding you might report is: "For every increase of 1 `<x variable>`, the housing price increases by `<amount>`, all else being equal".  Consider what types of visualizations would help to communicate the scale and direction of these findings.
+Based on all of your modeling work, choose your best model and report what it says about your research questions. An example finding you might report is: "For every increase of 1 `<x variable>`, the housing price increases by `<amount>`, all else being equal". Consider what types of visualizations would help to communicate the scale and direction of these findings.
 
 ### 6. Deployment
 
