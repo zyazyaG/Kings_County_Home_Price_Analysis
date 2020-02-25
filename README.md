@@ -11,9 +11,9 @@ The factors that influence housing prices interest many people, from homeowners 
 
 ## PROJECT GOAL
 
-Stakeholders in King County, WA have requested statistical analysis to validate several claims about housing prices in the most recent full calendar year, 2018.
+Stakeholders in King County, WA have requested statistical analysis to validate several claims about housing prices in the most recent full calendar year, 2019.
 
-These claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
+Six of the claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
 
 1. Higher square footage increases home sale price<sup>1, 2</sup>
 2. Having a porch increases home sale price<sup>3, 4</sup>
@@ -22,7 +22,7 @@ These claims can be addressed directly with the three datasets (from the King Co
 5. The cost per square foot is lower in duplexes than in single-family homes<sup>7</sup>
 6. The presence of a nuisance (power lines, traffic noise, airport noise) decreases home sale price<sup>1, 5</sup>
 
-These claims would require you to seek out additional datasets:
+Three of the claims would require you to seek out additional datasets:
 
 7. Access to "frequent transit" increases home sale price<sup>6</sup>
 8. Lower speed limits increase home sale price<sup>6</sup>
@@ -42,7 +42,7 @@ The particular tables required for this analysis are:
  - Residential Building
  - Parcel
 
-There is also a table called "Lookup" that explains the meaning of many of the attributes in the above tables (e.g. the `Street Surface` attribute of a parcel is a number with lookup code 60, which indicates that `1` means `PAVED`, `2` means `GRAVEL`, `3` means `DIRT`, and `4` means `UNDEVELOPED`)
+There is also a table called "Lookup" that explains the meaning of many of the attributes in the above tables (e.g. the `Street Surface` attribute of a parcel is a number with lookup code 60, which indicates that `1` means `PAVED`, `2` means `GRAVEL`, `3` means `DIRT`, and `4` means `UNDEVELOPED`).
 
 ## PROJECT REQUIREMENTS
 
