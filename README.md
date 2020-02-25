@@ -49,7 +49,7 @@ There is also a table called "Lookup" that explains the meaning of many of the a
 At minimum, your team of data scientists should:
 
  - Build a linear regression model with a target variable of home sale price, that is statistically valid such that any interpretation of coefficients are valid
-    - Features must not violate the assumptions of a linear regression (multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.)
+    - Do your best to have features meet the assumptions of a linear regression (no multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.). Note: This is difficult! We will be looking most of all for _improvement_ on this score. In order to demonstrate improvement, you should create a (not very good) model that will serve as a kind of _baseline_. Then you can compare future regression models that you build with that baseline.
     - Try to maximize R<sup>2</sup> _without breaking any assumptions_
  - Address at least 3 of the 9 claims about housing prices made by subject-matter experts
     - Report the effect size as well as the statistical significance
@@ -58,9 +58,10 @@ At minimum, your team of data scientists should:
 
 In any extra time:
 
- - Engineer additional features to improve R<sup>2</sup> (without violating assumptions), either with the existing datasets or by acquiring additional datasets
- - Address additional claims from the subject-matter experts (without violating assumptions)
- - Utilize additional statistical techniques other than linear regression to address research questions related to the claims investigated
+ - Engineer additional features to improve R<sup>2</sup> (without violating assumptions), either with the existing datasets or by acquiring additional datasets.
+ - Address additional claims from the subject-matter experts (without violating assumptions).
+ - Utilize additional statistical techniques other than linear regression to address research questions related to the claims investigated.
+ - Make use of bootstrapping to generate confidence intervals for your regression parameters and then compare with them with the intervals that statsmodels generates.
 
 ## DELIVERABLES
 
