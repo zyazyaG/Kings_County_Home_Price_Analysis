@@ -1,9 +1,11 @@
 
 # Module 2 Final Project
 
-Another module down--you're half way there!
+Another module down--you're almost half way there!
 
-![awesome gif](https://raw.githubusercontent.com/learn-co-students/dsc-mod-2-project-seattle-ds-102819/master/halfway-there.gif)
+![awesome gif](halfway-there.gif)
+
+This will be your first of several modeling projects.  In this case, your goal is to build a model that provides inferential insights into real-world housing data.
 
 ## BACKGROUND
 
@@ -72,37 +74,41 @@ In any extra time:
     - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
     - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
     - Quality linear regression model
-       - Your model should not violate any of the assumptions of a linear regression
+       - Your model should avoid violating any of the assumptions of a linear regression
        - Whenever necessary, briefly explain in comments the changes made from one iteration to the next, and why you made these choices
 4. A standalone `data/` directory that stores all relevant raw and processed data files
-    - Be sure to include how the data was obtained!
+    - **Be sure to include how the data was obtained!**
     - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history.
 5. A standalone `references/` directory that stores all relevant literature, data dictionaries, or useful references that were used to help you during the project.
     - Use this directory to store physical copies of the `.pdf` files; or
     - Create a `README.md` file that cites external resources that were used.
 6. A standalone `reports/` directory that stores your `memo.md` and `presentation.pdf` files
-7. A user-focused `README.md` file that explains your process, methodology and findings.
-    - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
-8. One Jupyter Notebook file that focuses on EDA, visualization, and presentation. 
+7. A standalone `notebooks/` directory that stores both your exploratory and report notebooks
+    - A record of your workflow should be stored in `notebooks/exploratory`. Don't be afraid to leave in error messages, so you know what didn't work!
+8. A user-focused `README.md` file that briefly covers your process, methodology and findings.
+    - Someone with no context on your project should be able to use this document to understand the structure of your project, and adapt your code for their needs.
+9. One final Jupyter Notebook file stored in `notebooks/report` that focuses on visualization and presentation
     - The very beginning of the notebook contains a description of the purpose of the notebook.
        - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them by enabling them to jump into your project by providing them the purpose of this Jupyter Notebook.
     - Explanation of the data sources and where one can retrieve them
        - Whenever possible, link to the corresponding data dictionary
-    - Custom functions and classes are imported from Python modules and are not created directly in the notebook.
+    - Custom functions and classes are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
     - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
-9. A one-page memo written exclusively for a non-technical stakeholder with a file name `memo.md`.
+    - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
+10. A one-page memo stored in `reports/memo.md` written exclusively for a non-technical stakeholder.
     - This memo should describe:
        - A summary of the business problem you are trying to solve
        - Key takeaways from your solution
        - A section on next steps if you had more time (i.e. one additional week)
-10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
-    - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `presentation.pdf`.
+11. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+    - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `reports/presentation.pdf`.
     - Contain between 5-10 professional quality slides detailing:
        - A high-level overview of your methodology
        - The results you’ve uncovered
        - Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company/stakeholder?)
        - Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
     - The slides should use visualizations whenever possible, and avoid walls of text
+    - All visualizations included in this presentation should also be exported as image files (e.g. with `plt.savefig`, not by taking a screenshot) and saved under `reports/figures/`
 
 
 ## THE PROCESS
@@ -112,6 +118,13 @@ These steps are informed by Smart Vision's<sup>9</sup> description of the CRISP-
 ### 1. Business Understanding
 
 Start by reading this document, and making sure that you understand the kinds of questions being asked. In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section. Do you want to emphasize affordability, investment, or something else? This framing will help you choose which stakeholder claims to address.
+
+Some potential audiences are:
+
+1. Homeowners who want to increase the sale price of their homes through home improvement projects
+2. Advocacy groups who want to promote affordable housing
+3. Local elected officials who want to understand how their policy ideas (e.g. zoning changes, permitting) might impact home prices
+4. Real estate investors looking for potential "fixer-uppers" or "tear-downs"
 
 Three things to be sure you establish during this phase are:
 
@@ -123,27 +136,37 @@ Three things to be sure you establish during this phase are:
 
 Write a script to download the data (or instructions for future users on how to manually download it), and explore it. Do you understand what the columns mean? How do the three data tables relate to each other? How will you select the subset of relevant data? What kind of data cleaning is required?
 
+Make sure that you document the process for retrieving this data so it can be reproduced by a future user.
+
 It may be useful to generate visualizations of the data during this phase.
 
 ### 3. Data Preparation
 
-Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables. Be sure to document any data that you choose to drop or otherwise exclude. This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a linear regression model.
+Through SQL and/or Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for analysis in a linear regression model, including any merging of tables. Be sure to document any data that you choose to drop or otherwise exclude. This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into a linear regression model.
 
 ### 4. Modeling
 
-Your goal here is not to build just one model; it is to build many models and then choose the best one. In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2018 in King County, as opposed to building a generalizable model that can make predictions about unseen data.
+The modeling phase in this project is should be a brief stop-over as you are jumping back and forth between the data preparation and the evaluation phases.  If the data preparation was done correctly, it only takes a few lines of code to build a linear regression model.  Then you should be able to print out your model's metrics and quickly move to the evaluation phase.
+
+(In future modules, there will be more complex steps involved with tuning the model itself.)
+
+### 5. Evaluation
+
+Your goal here is not to build just one model; it is to build many models and then choose the best one. In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2019 in King County, as opposed to building a generalizable model that can make predictions about unseen data.
 
 Because of this framing, a higher R<sup>2</sup> is ideal, but you should not focus on attaining a higher R<sup>2</sup> so long as you have gross violations of the assumptions of a linear regression. These assumptions should be your focus both when selecting features and when assessing the quality of your model. Even with a relatively low R<sup>2</sup>, coefficients and p-values will be valid and meaningful if there are no violations of the assumptions.
 
 This framing has some implications for your process. For example, you do not want to perform a train-test split or have some other form of hold-out data; you want all of your data to go into getting the best possible coefficients. There is also no single number you can reference to demonstrate that you have the best possible model; in this way causal inference is more of an art, whereas machine learning is more of a science. You can use as many features as you want, but every step of the way you need to check the assumptions, not just check whether R<sup>2</sup> has improved. Because R<sup>2</sup> can only go up when you add more features, you may want to consult the adjusted R<sup>2</sup> metric as well.
 
-### 5. Evaluation
+Your first cycle through these steps should result in some kind of "baseline" model.  Once you have that model, create a mini "report" that describes the model performance (in terms of R<sup>2</sup> or adjusted R<sup>2</sup>) as well as checks for the assumptions of linear regression.  The Learn labs [Assumptions for Linear Regression](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/assumptions-for-linear-regression), [Ordinary Least Squares in Statsmodels (OLS)](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/ordinary-least-squares-in-statsmodels-ols), and [Regression Diagnostics in Statsmodels](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/regression-diagnostics-in-statsmodels) are a good starting point for this, but you are also free to use external resources, e.g. looking through the statistics available in the [Statsmodels `stats` submodule](https://www.statsmodels.org/stable/stats.html).
 
-Based on all of your modeling work, choose your best model and report what it says about your research questions. An example finding you might report is: "For every increase of 1 `<x variable>`, the housing price increases by `<amount>`, all else being equal". Consider what types of visualizations would help to communicate the scale and direction of these findings.
+As you build each new model, perform these checks repeatedly to see whether the new models are better than the baseline.  You will almost certainly want to build functions to perform these checks once you get into a rhythm of tweaking the model slightly, evaluating the result, rinse, repeat.
 
 ### 6. Deployment
 
-In this case, your "deployment" comes in the form of the deliverables listed above. Make sure you can answer the following questions about your process:
+When you are approaching the end of the available time, choose your best model and report what it says about your research questions. An example finding you might report is: "There is a statistically significant relationship between `<x variable>` and housing price. For every increase of 1 `<x variable>`, the housing price increases by `<amount>`, all else being equal". Consider what types of visualizations would help to communicate the scale and direction of these findings.
+
+Beyond just the numbers, tie these findings into a broader narrative that incorporates your business understanding.  Complete the deliverables listed above, and make sure you can answer the following questions about your process:
 
  - "How did you pick the question(s) that you did?"
  - "Why are these questions important from a business perspective?"
