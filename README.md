@@ -1,7 +1,7 @@
 
 # Module 2 Final Project
 
-Another module down--you're almost half way there!
+Another module down--you're almost halfway there!
 
 ![awesome gif](halfway-there.gif)
 
@@ -89,7 +89,7 @@ In any extra time:
     - Someone with no context on your project should be able to use this document to understand the structure of your project, and adapt your code for their needs.
 9. One final Jupyter Notebook file stored in `notebooks/report` that focuses on visualization and presentation
     - The very beginning of the notebook contains a description of the purpose of the notebook.
-       - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them by enabling them to jump into your project by providing them the purpose of this Jupyter Notebook.
+       - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them to jump into your project by providing them the purpose of this Jupyter Notebook.
     - Explanation of the data sources and where one can retrieve them
        - Whenever possible, link to the corresponding data dictionary
     - Custom functions and classes are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
@@ -146,7 +146,7 @@ Through SQL and/or Pandas, perform any necessary data cleaning and develop a que
 
 ### 4. Modeling
 
-The modeling phase in this project is should be a brief stop-over as you are jumping back and forth between the data preparation and the evaluation phases.  If the data preparation was done correctly, it only takes a few lines of code to build a linear regression model.  Then you should be able to print out your model's metrics and quickly move to the evaluation phase.
+The modeling phase in this project should be a brief stop-over as you are jumping back and forth between the data preparation and the evaluation phases.  If the data preparation was done correctly, it only takes a few lines of code to build a linear regression model.  Then you should be able to print out your model's metrics and quickly move to the evaluation phase.
 
 (In future modules, there will be more complex steps involved with tuning the model itself.)
 
