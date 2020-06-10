@@ -12,7 +12,9 @@ The factors that influence housing prices interest many people, from homeowners 
 
 ## PROJECT GOAL
 
-Stakeholders in King County, WA have requested statistical analysis to validate several claims about housing prices in the most recent full calendar year, 2019.
+A client in King County, WA wants to advise homeowners on **home improvement projects*** that will **add to the sale value of their homes**.
+
+This advice should be based on data from the most recent full calendar year, 2019.
 
 Six of the claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
 
@@ -29,44 +31,46 @@ Three of the claims would require you to seek out additional datasets:
 8. Lower speed limits increase home sale price<sup>6</sup>
 9. Having an accessory dwelling unit (ADU) increases home sale price<sup>6, 8</sup>
 
-Your task is to build a linear regression model to represent sales prices in King County, and use it to address some of these claims.
+**Your task is to build a linear regression model** to represent home sale prices in King County, and use it to advise homeowners on which home improvement projects will add to their home sale values.
 
 ## THE DATASET
 
 For this project, you'll be working with the King County House Sales dataset. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
 
-The data itself (CSV files) and descriptions of the data (DOC files) can be downloaded [here](https://info.kingcounty.gov/assessor/DataDownload/default.aspx). Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
+The data itself (CSV files) is located in the `data/raw/` directory, and the [data dictionary](references/King_County_Home_Sales_Data_Dictionary.pdf) is located in the `references/` directory.
+
+Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
 
 The particular tables required for this analysis are:
 
- - Real Property Sales
- - Residential Building
- - Parcel
+ - Real Property Sales (`EXTR_RPSale.csv`)
+ - Residential Building (`EXTR_ResBldg.csv`)
+ - Parcel (`EXTR_Parcel.csv`)
 
-There is also a table called "Lookup" that explains the meaning of many of the attributes in the above tables (e.g. the `Street Surface` attribute of a parcel is a number with lookup code 60, which indicates that `1` means `PAVED`, `2` means `GRAVEL`, `3` means `DIRT`, and `4` means `UNDEVELOPED`).
+There is also a table called "Look Up" that explains the meaning of many of the attributes in the above tables (e.g. the `Street Surface` attribute of a parcel is a number with lookup code 60, which indicates that `1` means `PAVED`, `2` means `GRAVEL`, `3` means `DIRT`, and `4` means `UNDEVELOPED`).  This table is located at `EXTR_LookUp.csv`.
 
 ## PROJECT REQUIREMENTS
 
-At minimum, your team of data scientists should:
+At minimum, you should:
 
- - Build a linear regression model with a target variable of home sale price, which is statistically valid such that any interpretation of coefficients are valid
+ - **Build a linear regression model with a target variable of home sale price, which is statistically valid such that any interpretation of coefficients are valid**
     - Do your best to have features meet the assumptions of a linear regression (no multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.). Note: This is difficult! We will be looking most of all for _improvement_ on this score. In order to demonstrate improvement, you should create a (not very good) model that will serve as a kind of _baseline_. Then you can compare future regression models that you build with that baseline.
     - Try to maximize R<sup>2</sup> _without breaking any assumptions_
- - Address at least 3 of the 9 claims about housing prices made by subject-matter experts
-    - Report the effect size as well as the statistical significance
-    - It is perfectly acceptable to report a non-finding here
- - Communicate your findings
+ - **Interpret the results of your model**
+    - Report the effect size as well as the statistical significance of each features
+    - It is perfectly acceptable to report a non-finding here (e.g. "we were unable to find evidence to support the claim that adding X is associated with a change in home values")
+- **Make a recommendation of home improvement projects for King County homeowners**
 
 In any extra time:
 
  - Engineer additional features to improve R<sup>2</sup> (without violating assumptions), either with the existing datasets or by acquiring additional datasets.
- - Address additional claims from the subject-matter experts (without violating assumptions).
  - Utilize additional statistical techniques other than linear regression to address research questions related to the claims investigated.
  - Make use of bootstrapping to generate confidence intervals for your regression parameters and then compare with them with the intervals that statsmodels generates.
 
 ## DELIVERABLES
 
 1. A public GitHub repository.
+    - Make a fork of this project repository
 2. An `environment.yml` file that contains all the necessary packages needed to recreate your `linreg-env` conda environment.
     - Unlike Mod 1, we haven't not given you an `environment.yml` file. Be sure to refer [to the documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to create and export the `linreg-env` conda environment.
 3. A standalone `src/` directory that stores all relevant source code.
@@ -76,12 +80,10 @@ In any extra time:
        - Your model should avoid violating any of the assumptions of a linear regression
        - Whenever necessary, briefly explain in comments the changes made from one iteration to the next, and why you made these choices
 4. A standalone `data/` directory that stores all relevant raw and processed data files
-    - **Be sure to include how the data was obtained!**
-    - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history.
+    - Raw data is already located in `data/raw/`
+    - When you have a dataframe with all of your cleaned data, consider saving it in the `data/processed` directory
 5. A standalone `references/` directory that stores all relevant literature, data dictionaries, or useful references that were used to help you during the project.
-    - Use this directory to store physical copies of the `.pdf` files; or
-    - Create a `README.md` file that cites external resources that were used.
-6. A standalone `reports/` directory that stores your `memo.md` and `presentation.pdf` files
+6. A standalone `reports/` directory that stores your `presentation.pdf` file
 7. A standalone `notebooks/` directory that stores both your exploratory and report notebooks
     - A record of your workflow should be stored in `notebooks/exploratory`. Don't be afraid to leave in error messages, so you know what didn't work!
 8. A user-focused `README.md` file that briefly covers your process, methodology and findings.
@@ -92,14 +94,9 @@ In any extra time:
     - Explanation of the data sources and where one can retrieve them
        - Whenever possible, link to the corresponding data dictionary
     - Custom functions and classes are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
-    - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
+    - At least 3 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
     - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
-10. A one-page memo stored in `reports/memo.md` written exclusively for a non-technical stakeholder.
-    - This memo should describe:
-       - A summary of the business problem you are trying to solve
-       - Key takeaways from your solution
-       - A section on next steps if you had more time (i.e. one additional week)
-11. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
     - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `reports/presentation.pdf`.
     - Contain between 5-10 professional quality slides detailing:
        - A high-level overview of your methodology
@@ -116,26 +113,25 @@ These steps are informed by Smart Vision's<sup>9</sup> description of the CRISP-
 
 ### 1. Business Understanding
 
-Start by reading this document, and making sure that you understand the kinds of questions being asked. In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than addressing all of the "many people" mentioned in the background section. Do you want to emphasize affordability, investment, or something else? This framing will help you choose which stakeholder claims to address.
-
-Some potential audiences are:
-
-1. Homeowners who want to increase the sale price of their homes through home improvement projects
-2. Advocacy groups who want to promote affordable housing
-3. Local elected officials who want to understand how their policy ideas (e.g. zoning changes, permitting) might impact home prices
-4. Real estate investors looking for potential "fixer-uppers" or "tear-downs"
+Start by reading this document, and making sure that you understand the kinds of questions being asked.
 
 Three things to be sure you establish during this phase are:
 
 1. **Objectives:** what questions are you trying to answer, and for whom?
-2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining. Regardless, you should determine the division of labor, communication expectations, and timeline.
+2. **Project plan:** what are you going to accomplish on each day until the project deadline?
 3. **Success criteria:** what does a successful project look like? How will you know when you have achieved it?
 
 ### 2. Data Understanding
 
-Write a script to download the data (or instructions for future users on how to manually download it), and explore it. Do you understand what the columns mean? How do the three data tables relate to each other? How will you select the subset of relevant data? What kind of data cleaning is required?
+Read through the data dictionary, and perform some initial exploratory data analysis (EDA).
 
-Make sure that you document the process for retrieving this data so it can be reproduced by a future user.
+**Hint:** A lot of the data in these CSVs looks numeric, but actually represents some kind of ID.  So we recommend opening the data in Pandas with something like:
+
+```python
+pd.read_csv("../../data/raw/EXTR_Parcel.csv", dtype=str)
+```
+
+You can always convert columns that are actually numbers into numbers later, but this technique means that strings like `"0410"` aren't converted into `410` accidentally.
 
 It may be useful to generate visualizations of the data during this phase.
 
@@ -152,6 +148,8 @@ The modeling phase in this project should be a brief stop-over as you are jumpin
 ### 5. Evaluation
 
 Your goal here is not to build just one model; it is to build many models and then choose the best one. In this case (which is different from future machine learning models), your goal is to gain additional insight into the housing sales data from 2019 in King County, as opposed to building a generalizable model that can make predictions about unseen data.
+
+**In other words, you are not trying to build a tool to compete with the Zillow Zestimate to predict home values.**
 
 Because of this framing, a higher R<sup>2</sup> is ideal, but you should not focus on attaining a higher R<sup>2</sup> so long as you have gross violations of the assumptions of a linear regression. These assumptions should be your focus both when selecting features and when assessing the quality of your model. Even with a relatively low R<sup>2</sup>, coefficients and p-values will be valid and meaningful if there are no violations of the assumptions.
 
