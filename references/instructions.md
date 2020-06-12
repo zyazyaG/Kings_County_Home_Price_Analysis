@@ -21,6 +21,7 @@ These three claims can be addressed directly with the three datasets (from the K
 1. Enclosing a porch will increase the sale price of a home.<sup>1</sup>
 2. Converting a garage to a bedroom is a good way to increase the sale price of a home.<sup>2</sup>
 3. Upgrading to a forced-air heating system will increase the sale price of a home.<sup>3,4</sup>
+
 **Your task is to build a linear regression model** to represent home sale prices in King County, and use it to advise homeowners on which home improvement projects will add to their home sale values.
 
 ## THE DATASET
