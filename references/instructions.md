@@ -12,7 +12,7 @@ The factors that influence housing prices interest many people, from homeowners 
 
 ## PROJECT GOAL
 
-A client in King County, WA wants to advise homeowners on **home improvement projects*** that will **add to the sale value of their homes**.
+A client in King County, WA wants to advise homeowners on **home improvement projects** that will **add to the sale value of their homes**.
 
 This advice should be based on data from the most recent full calendar year, 2019.
 
