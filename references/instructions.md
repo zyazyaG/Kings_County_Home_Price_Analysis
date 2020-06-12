@@ -28,7 +28,7 @@ These three claims can be addressed directly with the three datasets (from the K
 
 For this project, you'll be working with the King County House Sales dataset. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
 
-The data itself (CSV files) is located in the `data/raw/` directory, and the [data dictionary](references/King_County_Home_Sales_Data_Dictionary.pdf) is located in the `references/` directory.
+The data itself (CSV files) is located in the `data/raw/` directory, and the [data dictionary](./King_County_Home_Sales_Data_Dictionary.pdf) is located in the `references/` directory.
 
 Additional information about the MAJOR and MINOR attributes can be found [here](https://www5.kingcounty.gov/sdc/Metadata.aspx?Layer=parcel#AttributeInfo).
 
