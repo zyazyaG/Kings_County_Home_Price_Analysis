@@ -16,21 +16,11 @@ A client in King County, WA wants to advise homeowners on **home improvement pro
 
 This advice should be based on data from the most recent full calendar year, 2019.
 
-Six of the claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
+These three claims can be addressed directly with the three datasets (from the King County Department of Assessments) described later in this document:
 
-1. Higher square footage increases home sale price<sup>1, 2</sup>
-2. Having a porch increases home sale price<sup>3, 4</sup>
-3. Having a beachfront or lakefront increases home sale price<sup>5</sup>
-4. The house filling a higher proportion of the overall lot decreases home sale price<sup>6</sup>
-5. The cost per square foot is lower in duplexes than in single-family homes<sup>7</sup>
-6. The presence of a nuisance (power lines, traffic noise, airport noise) decreases home sale price<sup>1, 5</sup>
-
-Three of the claims would require you to seek out additional datasets:
-
-7. Access to "frequent transit" increases home sale price<sup>6</sup>
-8. Lower speed limits increase home sale price<sup>6</sup>
-9. Having an accessory dwelling unit (ADU) increases home sale price<sup>6, 8</sup>
-
+1. Enclosing a porch will increase the sale price of a home.<sup>1</sup>
+2. Converting a garage to a bedroom is a good way to increase the sale price of a home.<sup>2</sup>
+3. Upgrading to a forced-air heating system will increase the sale price of a home.<sup>3,4</sup>
 **Your task is to build a linear regression model** to represent home sale prices in King County, and use it to advise homeowners on which home improvement projects will add to their home sale values.
 
 ## THE DATASET
@@ -157,7 +147,7 @@ This framing has some implications for your process. For example, you do not wan
 
 Your first cycle through these steps should result in some kind of "baseline" model.  Once you have that model, create a mini "report" that describes the model performance (in terms of R<sup>2</sup> or adjusted R<sup>2</sup>) as well as checks for the assumptions of linear regression.  The Learn labs [Assumptions for Linear Regression](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/assumptions-for-linear-regression), [Ordinary Least Squares in Statsmodels (OLS)](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/ordinary-least-squares-in-statsmodels-ols), and [Regression Diagnostics in Statsmodels](https://learn.co/tracks/module-2-data-science-career-2-1/statistics-ab-testing-and-linear-regression/section-18-introduction-to-linear-regression/regression-diagnostics-in-statsmodels) are a good starting point for this, but you are also free to use external resources, e.g. looking through the statistics available in the [Statsmodels `stats` submodule](https://www.statsmodels.org/stable/stats.html).
 
-As you build each new model, perform these checks repeatedly to see whether the new models are better than the baseline.  You will almost certainly want to build functions to perform these checks once you get into a rhythm of tweaking the model slightly, evaluating the result, rinse, repeat.
+As you build each new model, perform these checks repeatedly to see whether the new models are better than the baseline.  *You will almost certainly want to build functions to perform these checks* once you get into a rhythm of tweaking the model slightly, evaluating the result, rinse, repeat.
 
 ### 6. Deployment
 
@@ -165,7 +155,6 @@ When you are approaching the end of the available time, choose your best model a
 
 Beyond just the numbers, tie these findings into a broader narrative that incorporates your business understanding.  Complete the deliverables listed above, and make sure you can answer the following questions about your process:
 
- - "How did you pick the question(s) that you did?"
  - "Why are these questions important from a business perspective?"
  - "How did you decide on the data cleaning options you performed?"
  - "Why did you choose a given method or library?"
@@ -176,13 +165,10 @@ Beyond just the numbers, tie these findings into a broader narrative that incorp
  - "What are some of the things that could cause the results to be wrong?"
 
 ## Citations
+1. Unknown author. 2017. "What is the Value of Adding a Porch Enclosure to my Outdoor Space?". Patio Enclosures. Available at https://www.patioenclosures.com/what-is-the-value-of-adding-a-porch-enclosure-to-my-outdoor-space.aspx 
+2. Backman M. 2019. "Should You Convert Your Garage to Extra Living Space?". millionacres. Available at: https://www.fool.com/millionacres/real-estate-market/home-renovations/should-you-convert-your-garage-extra-living-space/
+3. Unknown author. 2019. "How Your HVAC System Affects Home Value". Big Mountain Air. Available at: https://www.bigmountainair.com/hvac-system-home-value/#:~:text=The%20impact%20of%20HVAC%20on,is%20a%20valuable%20selling%20point
+4. "Can A New HVAC Unit Increase The Overall Value Of Your Home?". Crystal Heating and Cooling. Available at: https://crystalheatingandcooling.com/new-hvac-unit-increase-the-overall-value-of-your-home/
 
-1. Gomez, J. 2019. "8 critical factors that influence a home’s value". OpenDoor. Available at: https://www.opendoor.com/w/blog/factors-that-influence-home-value
-2. Buczynski, B. 2019. "5 Proven Ways to Increase Home Value". NerdWallet. Available at: https://www.nerdwallet.com/blog/mortgages/how-to-increase-home-value/
-3. Taylor, A.B. 2019. "11 Features That Will Sell Your Home Faster". Kiplinger. Available at: https://www.kiplinger.com/slideshow/real-estate/T010-S001-home-features-today-s-buyers-want-most/index.html
-4. Crow, S. 2019. "50 Clever Ways to Instantly Add Value to Your Home". BestLife. Available at: https://bestlifeonline.com/home-value-upgrades/
-5. Unknown author. 2018. "5 Features That Make A Property Valuable". House Flipping School. Available at: https://houseflippingschool.com/5-features-valuable/
-6. Ludwick, R. 2019. Personal correspondence.
-7. Yeh, K. "Duplex vs. Single-Family Home: What's the difference and which one should I invest in?". Homebuyer's School by Brookfield Residential. Available at: https://stories.brookfieldresidential.com/homebuyersschool/duplex-vs.-single-family-home-whats-the-difference-and-which-one-should-i-invest-in
-8. "This is What Could Happen to Your Resale Value if You Add an Accessory Dwelling Unit (ADU) to Your Silicon Valley Property". Acton ADU. Available at: https://actonadu.com/blog/this-is-what-could-happen-to-your-resale-value-if-you-add-an-accessory-dwelling-unit-adu-to-your-silicon-valley-property
-9. "What is the CRISP-DM Methodology?" Smart Vision Europe. Available at: https://www.sv-europe.com/crisp-dm-methodology/
+
+
