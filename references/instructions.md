@@ -48,7 +48,7 @@ At minimum, you should:
     - Do your best to have features meet the assumptions of a linear regression (no multicollinearity, linear with respect to the outcome variable, errors are normally distributed, etc.). Note: This is difficult! We will be looking most of all for _improvement_ on this score. In order to demonstrate improvement, you should create a (not very good) model that will serve as a kind of _baseline_. Then you can compare future regression models that you build with that baseline.
     - Try to maximize R<sup>2</sup> _without breaking any assumptions_
  - **Interpret the results of your model**
-    - Report the effect size as well as the statistical significance of each features
+    - Report the coefficients as well as the statistical significance of each features
     - It is perfectly acceptable to report a non-finding here (e.g. "we were unable to find evidence to support the claim that adding X is associated with a change in home values")
 - **Make a recommendation of home improvement projects for King County homeowners**
 
@@ -63,7 +63,7 @@ In any extra time:
 1. A public GitHub repository.
     - Make a fork of this project repository
 2. An `environment.yml` file that contains all the necessary packages needed to recreate your `linreg-env` conda environment.
-    - Unlike Mod 1, we haven't not given you an `environment.yml` file. Be sure to refer [to the documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to create and export the `linreg-env` conda environment.
+    - A study group will be held covering conda environments Monday, February 22. You can reference conda documentation ][here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) to learn how to create and export the `linreg-env` conda environment.
 3. A standalone `src/` directory that stores all relevant source code.
     - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
     - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
@@ -84,7 +84,7 @@ In any extra time:
        - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them to jump into your project by providing them the purpose of this Jupyter Notebook.
     - Explanation of the data sources and where one can retrieve them
        - Whenever possible, link to the corresponding data dictionary
-    - Custom functions and classes are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
+    - Custom functions are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
     - At least 3 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
     - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
 10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
