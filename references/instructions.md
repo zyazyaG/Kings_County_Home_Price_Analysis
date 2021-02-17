@@ -1,6 +1,6 @@
-# Module 2 Final Project
+# Phase 2 Final Project
 
-Another module down--you're almost halfway there!
+Another phase down--you're almost halfway there!
 
 ![awesome gif](figures/halfway-there.gif)
 
