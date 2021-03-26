@@ -22,11 +22,11 @@ def show_info(df):
     
     missing_values = pd.DataFrame({'missing_values_%': persent})
     missing_values['Data_type'] = df.dtypes
+    missing_values['Duplicates'] = df.duplicated().sum()
     print("Lenght of Dataset: " + str(len(df)))
     print(missing_values)
     
     return
-
 
 # A function "remove_outliers" eliminates data that has value above the quantiles. 
 
