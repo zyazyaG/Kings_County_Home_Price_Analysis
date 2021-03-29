@@ -42,13 +42,15 @@ The datasets for this projects were provided by **the Kings County Department of
 
 To investigate the continious variables of the data closer, the **histograms** were plotted.
 
+### Histogram of All Continious Features
 ![graph1](figures/histogram.png)
 
 The histograms show that most of the variables are **not normally distributed** and are **positively skewed**. The columns `SqFt1stFloor`, `Bedrooms`, `YrBuilt` and `SqFtTotLiving` are the closest ones to **normal distributon.**
 
 Considering that `SalePrice` is a target variable for the analysis, the **correlation matrix** and **heatmap** plot were built to find the features that are **most correlated with the target.**
 
-![graph2](figures/heatmap.png)
+### Heatmap for All Features
+![graph2](figures/heatmap.png, width = 300, height = 300)
 
 Graph shows that **most correlated features** are `SalePrice`, `SqFtTotLiving`, `SqFt1stFloor`, `SqFt2ndFloor` and `BathFullCount`.
 
