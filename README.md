@@ -50,7 +50,7 @@ The histograms show that most of the variables are **not normally distributed** 
 Considering that `SalePrice` is a target variable for the analysis, the **correlation matrix** and **heatmap** plot were built to find the features that are **most correlated with the target.**
 
 ### Heatmap for All Features
-![graph2](figures/heatmap.png, width = 300, height = 300)
+![graph2](figures/heatmap.png| 300x300)
 
 Graph shows that **most correlated features** are `SalePrice`, `SqFtTotLiving`, `SqFt1stFloor`, `SqFt2ndFloor` and `BathFullCount`.
 
