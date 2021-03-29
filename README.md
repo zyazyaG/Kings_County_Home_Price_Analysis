@@ -50,12 +50,13 @@ The histograms show that most of the variables are **not normally distributed** 
 Considering that `SalePrice` is a target variable for the analysis, the **correlation matrix** and **heatmap** plot were built to find the features that are **most correlated with the target.**
 
 ### Heatmap for All Features
-![graph2](figures/heatmap.png = 300x300)
+![graph2](figures/heatmap.png)
 
 Graph shows that **most correlated features** are `SalePrice`, `SqFtTotLiving`, `SqFt1stFloor`, `SqFt2ndFloor` and `BathFullCount`.
 
 Lastly, to build a baseline model with only one feature that is the most correlated with target, the scatterplot was generated with target variable `SalePrice` and `SqFtTotLiving` feature.
 
+### Correlation Between `SalePrice` and `SqFtTotLiving`
 ![graph3](figures/scatter.png)
 
 The graph indeed shows **some sort of linearity** between a feature and a target.
@@ -67,7 +68,9 @@ Before building the first model, the data was **cleaned from outliers in contini
 
 After first linear regression baseline model with `SalePrice` as the target and `SqFtTotLiving` as a predictor, the **Error Plot** showed the **upward trend**, which migh be explained by the **distribution of sale years**. Thus, all **observations that are not from 2019 were dropped from dataframe.**
 
+### Error Plot with Full Data
 ![graph3](figures/heter.png)
+### Error Plot with Data Only from 2019
 ![graph4](figures/heter1.png)
 
 As the process of modeling progressed, a **square root transformation of target** `SalePrice` was done, which improved the model. While deeper investigation of the relationship between target and `SqFtTotLiving` feature,  **price per foot calculation** revealed another **set of outliers** that were later **dropped** from dataset. The result **improved the model's** `R-Square`.
@@ -129,15 +132,18 @@ Floor - Wall
 * The **linear relation p-value** in baseline model **decresed from 0.89 to 0.63** in final model, but still **holded the linearity assumption.**
 * None of the models passed normality assuption, meaning the **residuals were not normally distributed**. But final model showed the **better results on the Q-Q Plot.**
 
+### Q-Q Plot of Baseline Model (Model 3)
 ![graph5](figures/normal.png)
+
+### Q-Q Plot of Final Model (Model 8)
 ![graph6](figures/normal1.png)
 
 * The **Jarque_Bera p-value** was small and indicated **heteroscadasticity in the residuals** for both of the models. 
 * While the condition number of the final modelwas large, the Variance Inflation Factor values for the features show **no multicollinearity**, meaning the coefficients were lower than 5.0. 
-* All of the coefficients in final model were positively correlated with target variable `SalePrice`, except the `Elec BB` Heat System type. Considering that "Forced Air" was included in Target, the Elec BB Heat System have the decrease in Sale Price in relation to "Forced Air".
-* The intercept is smaller than all of the Forced Air heating when holding all other features constant. 
-* While holding all other features constant, the coefficient for `SqFtTotLiving_sqrt` indicates that every one foot increase in living space will result in a \$17 500 increase in `SalePrice`.
-* One square-foot increase in  SqFtOpenPorch, while other predictors remain constans, the SalePrice increases by $110. As for enclosed porch, Sale Price increases by $160.25.
+* All of the **coefficients** in final model were **positively correlated with target variable** `SalePrice`, except the `Elec BB` Heat System type. Considering that `Forced Air` was included in Target, the `Elec BB` Heat System have the **decrease in Sale Price **in relation to `Forced Air`.
+* The **intercept is smaller** than all of the `Forced Air` heating when holding all other features constant. 
+* While holding all other features constant, the coefficient for `SqFtTotLiving_sqrt` indicates that every **one foot increase in living space** will result in a **\$17 500** increase in `SalePrice`.
+* **One square-foot increase** in  `SqFtOpenPorch`, while other predictors remain constans, the `SalePrice` **increases by $110**. As for enclosed porch, `Sale Price` **increases by $160.25.**
 
 **The final model showedd better results than the baseline model.**
 
