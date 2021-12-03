@@ -30,7 +30,7 @@ This repository offers an analysis of factors that influence housing prices in K
 
 1. [Data Preparation Notebook](notebooks/exploratory/data_preparation.ipynb)
 2. [Final Analysis Notebook](notebooks/exploratory/KingsCountyHomePriceAnalysis.ipynb)
-3. [Presentation Slides](reports/presentation.pdf)
+3. [Presentation Slides](presentation.pdf)
 
 
 
